@@ -1,0 +1,78 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post-new-wrapper {
+  padding-top: 80px;
+  h1 {
+    font-size: 45px;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+}
+
+.post-new-left {
+  background-color: #D7EEFF;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  h3 {
+    font-size: 25px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+
+  .post-new-number {
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+
+  .post-new-summary {
+    font-size: 15px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+  }
+}
+
+.post-new-right{
+}
+
+
+.post-index-wrapper {
+  padding-top: 70px;
+  background-color: #fafafa;
+  .post-index-single {
+    background-color: #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 30px;
+    border: 1px solid #e6ecf0;
+    border-radius: 3px;
+    .post-author {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    .post-text {
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+
+    img {
+      margin-top: 10px;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+
+    .post-index-icon {
+      width: 35px;
+      height: 30px;
+      margin-left: 20px;
+    }
+  }
+}

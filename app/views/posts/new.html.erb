@@ -1,0 +1,45 @@
+<div class="post-new-wrapper" >
+  <div class="wrapper">
+    <h1 class="text-center">投稿画面</h1>
+    <h2 class="text-center">新しい情報が常にみんなによって更新されています</h2>
+    <div class="row">
+      <div class="col-md-5 col-md-offset-1 post-new-left">
+        <h3>投稿方法</h3>
+        <div >
+          <p class="post-new-number">その1</p>
+          <p class="post-new-summary">製品名・製造元を明記してください</p>
+        </div>
+        <div >
+          <p class="post-new-number">その2</p>
+          <p class="post-new-summary">原材料を明記してください</p>
+        </div>
+        <div >
+          <p class="post-new-number">その3</p>
+          <p class="post-new-summary">もし画像があれば画像を添付してください</p>
+        </div>
+      </div>
+      <div class="col-md-5 post-new-right">
+        <%= form_for @post do |f| %>
+          <div class="form-group">
+            <label>商品名</label>
+            <input type="text">
+            <ｐ>必ず入力して</ｐ>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :image %>
+            <%= f.file_field :image%>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :description %>
+            <%= f.text_area :description, class: 'form-control' %>
+          </div>
+
+          <%= f.submit '投稿', class: 'btn btn-black btn-block' %>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
