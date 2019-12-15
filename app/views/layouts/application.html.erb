@@ -19,22 +19,64 @@
       <div class="alert alert-<%= key %>" role="alert"><%= value %></div>
     <% end %>
     <header class="main-header">
+
+
+      <li class="logo">
+        <%= link_to root_path do %>
+          <p class="logo-lg">ホーム</p>
+        <% end %>
+      </li>
+
       <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top">
         <!-- Sidebar toggle button-->
         <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
           <span class="sr-only">Toggle navigation</span>
         </a>
-        <ul class="nav navbar-nav navbar-right" style="letter-spacing: 1px;">
-          <div class="col-md-2">
-            <a class="btn btn-block btn-white" href="#">いいね</a>
-          </div>
-          <div class="col-md-2">
-            <a class="btn btn-block btn-white" href="/posts/new">投稿</a>
-          </div>
-          <div class="col-md-2">
-            <a class="btn btn-block btn-white" href="/logout">ログアウト</a>
-          </div>
+        <ul class="nav navbar-nav navbar-right"　style="letter-spacing: 1px;">
+          <a href="#" class="header-favorite" data-toggle="push-menu" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+          <% if logged_in? %>
+            <li>
+              <div class="css-fukidashi">
+                <div class="text">
+                  <a href= "/posts/index">
+                    <i class="fa fa-flushed"></i>
+                    <span class="pull-right-container"></span>
+                  </a>
+                </div>
+                <p class="fukidashi">お気に入り</p>
+              </div>
+            </li>
+
+            <li>
+              <div class="css-fukidashi">
+                <div class="text">
+                  <a href= "/posts/new">
+                    <i class="fa fa-edit"></i>
+                    <span class="pull-right-container"></span>
+                  </a>
+                </div>
+                <p class="fukidashi">投稿する</p>
+              </div>
+            </li>
+            <li class="logout">
+              <%= link_to logout_path, method: :delete do %>
+                <p>ログアウト</p>
+              <% end %>
+            </li>
+          <% else %>
+
+            <li>
+              <%= link_to '会員登録', new_user_path, class: 'btn btn-block btn-white' %>
+            </li>
+            <li>
+              <%= link_to login_path do %>
+                <p>ログイン</p>
+              <% end %>
+            </li>
+          <% end %>
         </ul>
       </nav>
     </header>
@@ -50,16 +92,24 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
           <li>
-            <%= link_to 'このサイトとは', abouts_index_path, class: 'btn btn-block btn-white' %>
+            <a href= "/abouts/index">
+              <i class="fa fa-exclamation-circle"></i> <span>このサイトとは</span>
+            </a>
           </li>
           <li>
-            <%= link_to '調べる', posts_index_path, class: 'btn btn-block btn-white' %>
+            <a href= "/posts/index">
+              <i class="fa fa-eye"></i> <span>調べる</span>
+            </a>
           </li>
           <li>
-            <%= link_to 'あげる', posts_new_path,class: 'btn btn-block btn-white' %>
+            <a href= "/posts/new">
+              <i class="fa fa-comment-dots"></i> <span>共有</span>
+            </a>
           </li>
           <li>
-            <%= link_to '聞く', boards_index_path, class: 'btn btn-block btn-white' %>
+            <a href= "/boards">
+              <i class="fa fa-comment-alt"></i> <span>掲示板</span>
+            </a>
           </li>
         </ul>
       </section>
@@ -83,7 +133,7 @@
         });
     </script>
   </body>
-  
+
   <footer class="main-footer">
     <p class="footer-logo">FUKU</p>
     <p class="footer-sub">食の安全と安心</p>
@@ -92,13 +142,13 @@
         <%= link_to 'よくある質問', qandas_index_path %>
       </div>
       <div class="foot">
-        <%= link_to 'お問い合わせ', '#' %>
+        <%= link_to 'お問い合わせ', contacts_index_path %>
       </div>
       <div class="foot">
-        <%= link_to 'サイトマップ', tests_index_path %>
+        <%= link_to 'サイトマップ', sitemaps_index_path %>
       </div>
       <div class="foot">
-        <%= link_to '規約', '#' %>
+        <%= link_to '規約', tests_index_path %>
       </div>
     </nav>
   </footer>

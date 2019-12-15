@@ -20,15 +20,25 @@ class PostsController < ApplicationController
     end
   end
 
-  private
-  def post_params
-    params.require(:post).permit(:title, :image, :description)
+  def edit
+    @post = Post.find_by(id: params[:id])
+  end
+
+  def update
+    @post = Post.find_by(id: params[:id])
+    @post.update(title: params[:title], description: params[:description])
+
+    redirect_to("/posts/index")
   end
 
   def destroy
-   post = Post.find(params[:id])
-    if post.user_id == current_user.id
-     post.destroy #destroyメソッドを使用し対象のツイートを削除する。
-    end
+      @post = Post.find(params[:id])
+      @post.destroy
+      redirect_to("/posts/index")
+  end
+
+  private
+  def post_params
+    params.require(:post).permit(:title, :image, :description)
   end
 end

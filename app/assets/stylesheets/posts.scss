@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .post-new-wrapper {
-  padding-top: 80px;
+  padding-top: 10px;
   h1 {
     font-size: 45px;
     margin-bottom: 10px;
@@ -16,6 +16,9 @@
   }
 }
 
+a {
+  color:#fff;
+}
 .post-new-left {
   background-color: #D7EEFF;
   margin-left: 5px;
@@ -39,12 +42,16 @@
   }
 }
 
-.post-new-right{
+.posts-h1 {
+  text-align: center;
+}
+
+.posts-h2 {
+  text-align: center;
 }
 
 
 .post-index-wrapper {
-  padding-top: 70px;
   background-color: #fafafa;
   .post-index-single {
     background-color: #fff;
@@ -66,6 +73,8 @@
     img {
       margin-top: 10px;
       margin-bottom: 20px;
+      margin-left: 10px;
+      margin-right: 10px;
       width: 100%;
     }
 
@@ -74,5 +83,13 @@
       height: 30px;
       margin-left: 20px;
     }
+
+    .btn {
+      color: #fff;
+    }
   }
+}
+
+.post-destroy {
+  text-align: center;
 }

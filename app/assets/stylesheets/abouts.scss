@@ -3,17 +3,23 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .abouts-h1{
   padding-top: 5px;
-  margin-top: 100px;
+  margin-top: 20px;
   font-size: 40px;
   text-align: center;
   margin-bottom: 10px;
 }
 
 .abouts-this{
-  font-family: 'serif';
-  padding-bottom: 5px;
-  font-size: 20px;
-  text-align: center;
+  .abouts-p{
+    font-family: 'serif';
+    padding-bottom: 5px;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .abouts-section {
+    text-align: center;
+  }
 }
 
 .abouts-h2{
@@ -25,4 +31,10 @@
 .abouts-description {
   margin-left: 50px;
   margin-right: 50px;
+}
+.abouts-img {
+  display: block;
+  height: auto;
+  max-width: 50%;
+  margin: 0 auto;
 }

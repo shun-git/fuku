@@ -3,14 +3,18 @@ Rails.application.routes.draw do
   get 'boards/new'
   get 'abouts/new'
   get 'users/new'
-
+  get 'posts/new'
   get 'posts/index'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'sessions/new'
+
   root 'pages#index'
   get 'pages/help'
 
   resources :users
   resources :posts
+  resources :boards
 
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
@@ -20,15 +24,23 @@ Rails.application.routes.draw do
 
   get "posts/new" => "posts#new"
   get "posts/index" => "posts#index"
+
+  get "posts/:id/edit" => "posts#edit"
+  post "posts/:id/update" => "posts#update"
+  post "posts/:id/destroy" => "posts#destroy"
   delete 'posts/:id' => 'posts#destroy'
 
   get "boards/index" => "boards#index"
-  # root -> ルートパス(localhost:3000)でアクセスした場合に割り当てられる設定で、Controllerファイルに記述するindexメソッドを実行するように定義
-  get 'boards', to: 'boards#index'
-  # 投稿ページを表示
-  get 'boards/new', to: 'boards#new'
 
-  get "tests/index" => "tests#index"
+  get "boards/:id/edit" => "boards#edit"
+  post "boards/:id/update" => "boards#update"
+  post "boards/:id/destroy" => 'boards#destroy'
+
+  get "tests/index" => 'tests#index'
 
   get "qandas/index" => "qandas#index"
+
+  get "contacts/index" => "contacts#index"
+
+  get "sitemaps/index" => "sitemaps#index"
 end

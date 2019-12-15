@@ -3,6 +3,5 @@ class TestsController < ApplicationController
   end
 
   def index
-    render "tests/tests"
   end
 end

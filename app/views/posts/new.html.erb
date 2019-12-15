@@ -22,20 +22,21 @@
         <%= form_for @post do |f| %>
           <div class="form-group">
             <label>商品名</label>
-            <input type="text">
-            <ｐ>必ず入力して</ｐ>
+            <%= f.text_field :title%>
+            <ｐ class="text">必ず入力して</ｐ>
           </div>
 
           <div class="form-group">
             <%= f.label :image %>
             <%= f.file_field :image%>
+            <ｐ class="text">必ず入力して</ｐ>
           </div>
 
           <div class="form-group">
             <%= f.label :description %>
             <%= f.text_area :description, class: 'form-control' %>
+            <ｐ class="text">必ず入力して</ｐ>
           </div>
-
           <%= f.submit '投稿', class: 'btn btn-black btn-block' %>
 
         <% end %>

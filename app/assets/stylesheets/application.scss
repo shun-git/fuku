@@ -18,7 +18,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "boards";
-@import 'custom';
 /*
  @import "base";
 */
@@ -27,3 +26,4 @@
 @import 'bootstrap/dist/css/bootstrap.min';
 @import 'admin-lte/dist/css/AdminLTE.min';
 @import 'admin-lte/dist/css/skins/skin-blue.min';
+@import 'custom';
