@@ -79,4 +79,4 @@ gem "carrierwave"
 
 gem 'font-awesome-sass', '~> 5.4.1'
 
-gem 'rake', '< 11.0'
+gem 'rake', '< 13.0'
